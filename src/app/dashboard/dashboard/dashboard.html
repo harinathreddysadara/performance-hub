@@ -1,1 +1,63 @@
-<p>dashboard works!</p>
+@if (loading) {
+<div  class="loader-container">
+  <div class="loader"></div>
+</div>
+}
+@else if (!loading) {
+  <div class="kpi-row">
+  <div class="kpi-card good">
+    <small>Avg Team Score</small>
+    <h1>{{ dashboard?.teamAverageScore }} / 10</h1>
+    <div class="kpi-change"><span class="kpi-up">&#8599; +{{ dashboard?.teamScoreDiff }} vs last month</span></div>
+  </div>
+  <div class="kpi-card good">
+    <small>Goals Met Rate</small>
+    <h1>{{ dashboard?.goalsMetRate }}%</h1>
+    <div class="kpi-status good">&#9678; On track</div>
+  </div>
+  <div class="kpi-card warning">
+    <small>Unreviewed Employees</small>
+    <h1>{{ dashboard?.unreviewedEmployees }}</h1>
+    <div class="kpi-status warning">&#9888; Action required</div>
+  </div>
+</div>
+
+<!-- Chart Card Section -->
+<div class="trend-card">
+  <b>Team Performance Trend</b>
+  <div class="trend-desc">Average score across all employees <small>(Last 12 Months)</small></div>
+  <ngx-charts-line-chart
+    [scheme]="'vivid'"
+    [results]="trendChartData"
+    [xAxis]="true"
+    [yAxis]="true"
+    [legend]="false"
+    [xAxisLabel]="'Month'"
+    [yAxisLabel]="'Avg Score'"
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    [autoScale]="true"
+    [animations]="true"
+    [roundDomains]="true"
+    [tooltipDisabled]="false"
+    [timeline]="false"
+    style="width: 100%; height: 260px;">
+  </ngx-charts-line-chart>
+</div>
+
+<!-- Top Performers Section -->
+<h3 class="top-performers-title">Top Performers</h3>
+<div class="top-performers-list">
+  <div *ngFor="let perf of employees" class="perf-card" [ngClass]="perf.score > 7 ? 'good' : 'warning'">
+    <div class="avatar" [ngClass]="perf.score > 7 ? 'good' : 'warning'">{{ perf.initials }}</div>
+    <div class="meta">
+      <div class="name">{{ perf.name }}</div>
+      <div class="role">{{ perf.role }}</div>
+      <div class="stat">Avg Score: <span [ngClass]="perf.score > 7 ? 'good' : 'warning'">{{ perf.score }}/10</span></div>
+      <div class="stat">Goals Met: <span [ngClass]="perf.goalsMet === 100 ? 'good' : 'warning'">{{ perf.goalsMet }}%</span></div>
+      <a class="report-link" href="#">View Report</a>
+    </div>
+  </div>
+</div>
+}
+

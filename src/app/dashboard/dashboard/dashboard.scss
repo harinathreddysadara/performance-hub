@@ -1,0 +1,140 @@
+.kpi-row {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+.kpi-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #f3f5fa;
+  flex: 1;
+  padding: 22px 26px;
+}
+.kpi-card.warning h1, .kpi-status.warning {
+  color: #e14343;
+}
+.kpi-card.good h1, .kpi-status.good, .kpi-up {
+  color: #16b85e;
+}
+.kpi-status {
+  margin-top: 2px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.trend-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px #f3f5fa;
+  padding: 22px;
+  margin-bottom: 24px;
+}
+.trend-title { font-size: 1.2rem; font-weight: 700;}
+.trend-desc { color: #929fb5; font-size: 14px;}
+.trend-months {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  color: #6a7fc2;
+  margin-top: 6px;
+}
+.top-performers-title {
+  font-size: 1.09rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.top-performers-list {
+  display: flex;
+  gap: 28px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.perf-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #f3f5fa;
+  min-width: 260px;
+  padding: 18px 20px 16px 20px;
+  display: flex;
+  align-items: flex-start;
+  border: 2px solid #ebf0f8;
+  transition: box-shadow 0.1s;
+  gap: 18px;
+  margin-bottom: 8px;
+}
+
+.perf-card.good { border-color: #e7fadc; }
+.perf-card.warning { border-color: #ffebf1; }
+
+.avatar {
+  background: #16b85e;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.15em;
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.avatar.good { background: #16b85e; }
+.avatar.warning { background: #e14343; }
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 3px;
+}
+
+.role {
+  font-size: 14px;
+  color: #9ba8ba;
+  margin-bottom: 7px;
+}
+
+.stat {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.stat.good { color: #16b85e; }
+.stat.warning { color: #e14343; }
+
+.report-link {
+  font-size: 14px;
+  color: #3579f6;
+  text-decoration: underline;
+  font-weight: 500;
+}
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;  // or 100vh if you want
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3579f6;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
