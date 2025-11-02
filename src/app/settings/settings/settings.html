@@ -1,1 +1,39 @@
-<p>settings works!</p>
+<div class="settings-container">
+<div *ngIf="loading" class="loader">Saving...</div>
+<div *ngIf="submitSuccess" class="success-message">Settings saved successfully!</div>
+<div *ngIf="submitError" class="error-message">{{ submitError }}</div>
+  <form [formGroup]="settingsForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="score">Review Score (0-10)</label>
+      <input type="number" id="score" class="form-control" formControlName="reviewScore" min="0" max="10" />
+    </div>
+
+    <div class="form-group">
+      <label for="reviewName">Reviewer Name</label>
+      <input type="text" id="reviewName" class="form-control" formControlName="reviewerName" />
+      <div class="error" *ngIf="settingsForm.get('reviewerName')?.invalid && settingsForm.get('reviewerName')?.touched">
+        <span>Reviewer Name is required.</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="feedback">Feedback Summary</label>
+      <textarea id="feedback" class="form-control" placeholder="Provide constructive feedback..." formControlName="feedback"></textarea>
+    </div>
+
+    <div class="form-group display-theme">
+      <span>Display Theme</span>
+      <label>
+        <input type="radio" formControlName="theme" value="light" /> Light Mode
+      </label>
+      <label>
+        <input type="radio" formControlName="theme" value="dark" /> Dark Mode
+      </label>
+    </div>
+
+    <div class="button-group">
+      <button type="button" class="cancel-btn" (click)="onCancel()">Cancel</button>
+      <button type="submit" class="save-btn">Save Settings</button>
+    </div>
+  </form>
+</div>

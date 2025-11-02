@@ -1,0 +1,124 @@
+.settings-container {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 24px;
+  max-width: 480px;
+  margin: 40px auto;
+  box-shadow: 0 2px 16px 1px rgba(16, 30, 54, 0.08);
+
+  h2 {
+    margin-bottom: 28px;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #1b2330;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #232a36;
+    }
+
+    .form-control {
+      width: 100%;
+      border: 1.5px solid #e6e8ec;
+      border-radius: 8px;
+      padding: 14px 12px;
+      font-size: 1rem;
+      background-color: #fafaff;
+      color: #232a36;
+      outline: none;
+      margin-bottom: 2px;
+      transition: border-color 0.2s;
+    }
+
+    .form-control:focus {
+      border-color: #336ef8;
+    }
+
+    textarea.form-control {
+      min-height: 95px;
+      resize: vertical;
+    }
+
+    .error {
+      color: #ec2020;
+      font-size: 0.93rem;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      span {
+        line-height: 1.3;
+      }
+    }
+  }
+
+  .display-theme {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    span {
+      margin-right: 14px;
+      font-weight: 600;
+      color: #232a36;
+    }
+
+    label {
+      font-weight: 500;
+      color: #232a36;
+      margin-bottom: 0;
+      cursor: pointer;
+
+      input[type='radio'] {
+        margin-right: 6px;
+        accent-color: #336ef8;
+      }
+    }
+  }
+
+  .button-group {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+    margin-top: 24px;
+
+    .cancel-btn {
+      background: #f5f6fa;
+      color: #6c7380;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: background 0.2s;
+
+      &:hover {
+        background: #eaecef;
+      }
+    }
+
+    .save-btn {
+      background: #336ef8;
+      color: #fff;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+
+      &:hover {
+        background: #1743b6;
+      }
+    }
+  }
+}

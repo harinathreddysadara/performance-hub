@@ -52,7 +52,7 @@ export class Reports implements OnInit {
   }
 
   viewEmployee(empId: number) {
-  this.router.navigate(['employees', 'view', empId]);
-}
+    this.router.navigate(['employees', 'view', empId]);
+  }
 
 }
