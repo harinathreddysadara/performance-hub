@@ -1,0 +1,141 @@
+.reports-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 32px;
+}
+
+.reports-title {
+    font-size: 1.38rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.reports-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px #f3f5fa;
+    padding: 26px;
+}
+
+.reports-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+
+    th {
+        text-align: left;
+        color: #637092;
+        font-size: 14px;
+        font-weight: 500;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #ebeff7;
+    }
+
+    td {
+        font-size: 15px;
+        padding: 12px 4px;
+        border-bottom: 1px solid #eef1f6;
+    }
+}
+
+.score-green {
+    color: #10b981;
+    font-weight: 700;
+}
+
+.score-red {
+    color: #ef4444;
+    font-weight: 700;
+}
+
+.action-btn {
+    border: none;
+    background: none;
+    font-size: 17px;
+    margin-right: 6px;
+    cursor: pointer;
+    color: #3579f6;
+}
+
+.pagination {
+    margin: 12px 0 0 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 15px;
+
+    .page-num {
+        background: #3579f6;
+        color: #fff;
+        border-radius: 5px;
+        padding: 2px 13px;
+        border: none;
+        font-size: 15px;
+    }
+
+    button {
+        border: 1px solid #dee2e8;
+        background: #f4f7fa;
+        border-radius: 5px;
+        padding: 3px 12px;
+        margin: 2px;
+        color: #425470;
+        font-weight: 500;
+        cursor: pointer;
+
+        &:disabled {
+            color: #b0bacd;
+            background: #f4f6fb;
+            cursor: not-allowed;
+        }
+    }
+}
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+.loader {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3579f6;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.no-records-row {
+  height: 160px;
+  display: table-row; 
+}
+
+.no-records-cell {
+  text-align: center;
+  color: #bbb;
+  font-size: 18px;
+  font-weight: 500;
+  height: 100%;
+  vertical-align: middle;
+  padding: 0;
+}
+
+.no-records-row .no-records-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 160px;
+}
+

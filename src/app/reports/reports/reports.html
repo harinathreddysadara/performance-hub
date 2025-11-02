@@ -1,1 +1,45 @@
-<p>reports works!</p>
+<div *ngIf="loading" class="loader-container">
+    <div class="loader"></div>
+</div>
+<div *ngIf="!loading" class="reports-container">
+    <h2 class="reports-title">Employee Reviews</h2>
+    <div class="reports-card">
+        <table class="reports-table">
+            <thead>
+                <tr>
+                    <th>EMPLOYEE</th>
+                    <th>ROLE</th>
+                    <th>AVG SCORE</th>
+                    <th>ACTIONS</th>
+                </tr>
+            </thead>
+            <tbody>
+                 <tr *ngIf="!pagedEmployees.length && !loading" class="no-records-row">
+    <td colspan="4" class="no-records-cell">No records to show</td>
+  </tr>
+                <tr *ngFor="let emp of pagedEmployees">
+                    <td>{{ emp.name }}</td>
+                    <td>{{ emp.role }}</td>
+                    <td>
+                        <span [ngClass]="emp.score >= 7.5 ? 'score-green' : 'score-red'">
+                            {{ emp.score | number:'1.1-1' }}
+                        </span>
+                    </td>
+                    <td>
+                        <button class="action-btn view" (click)="viewEmployee(emp.id)">
+                            <span>&#128065;</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+        <div class="pagination">
+            <span>Showing {{(currentPage-1)*pageSize+1}} to {{Math.min(currentPage*pageSize,employees.length)}} of
+                {{employees.length}} results</span>
+            <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+            <button class="page-num">{{ currentPage }}</button>
+            <button (click)="nextPage()" [disabled]="currentPage * pageSize >= employees.length">Next</button>
+        </div>
+    </div>
+</div>
