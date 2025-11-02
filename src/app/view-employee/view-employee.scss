@@ -1,0 +1,137 @@
+.employee-profile {
+    max-width: 1100px;
+    margin: 32px auto;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.profile-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.edit-btn {
+    background: #3579f6;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.back-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.profile-cards {
+    display: flex;
+    gap: 22px;
+    margin: 32px 0 24px 0;
+}
+
+.profile-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 30px 32px;
+    box-shadow: 0 2px 8px #f3f5fa;
+    flex: 1;
+    min-width: 230px;
+}
+
+.profile-card.gold-border {
+    border: 2px solid #ffd700;
+}
+
+.profile-card h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.profile-card small {
+    font-size: 0.98rem;
+    color: #798296;
+    font-weight: 500;
+}
+
+.profile-lower {
+    display: flex;
+    gap: 22px;
+}
+
+.profile-card.slim {
+    padding: 24px 22px;
+    flex: 1;
+}
+
+.active-status {
+    color: #10b981;
+    font-weight: 600;
+}
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 320px;
+}
+
+.loader {
+    border: 6px solid #e8e8e8;
+    border-top: 6px solid #3579f6;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.profile-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 30px 32px;
+  box-shadow: 0 2px 8px #f3f5fa;
+  flex: 1;
+  min-width: 230px;
+  border: 3px solid transparent;
+}
+
+.profile-cards .profile-card:nth-child(1) {
+  border-color: #3579f6;
+}
+
+.profile-cards .profile-card:nth-child(2) {
+  border-color: #8b5cf6;
+}
+
+.profile-cards .profile-card:nth-child(3) {
+  border-color: #facc15;
+}
+
+.profile-lower .profile-card.slim:nth-child(1) {
+  border-color: #10b981;
+}
+.profile-lower .profile-card.slim:nth-child(2) {
+  border-color: #fb923c;
+}
+
+.profile-card.gold-border {
+  border-color: #ffd700 !important;
+}

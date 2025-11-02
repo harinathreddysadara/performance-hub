@@ -1,0 +1,39 @@
+<div *ngIf="loading" class="loader-container">
+  <div class="loader"></div>
+</div>
+
+<div *ngIf="!loading && selectedEmployee" class="employee-profile">
+  <div class="profile-header">
+    <button class="back-btn" (click)="goToReports()">&#8592;</button>
+    <h2>{{ selectedEmployee.name }}'s Performance Profile</h2>
+    <button class="edit-btn">Edit Profile</button>
+  </div>
+  <div class="profile-cards">
+    <div class="profile-card">
+      <small>Average Score (Lifetime)</small>
+      <h1>{{ selectedEmployee.score | number: '1.1-1' }} / 10</h1>
+    </div>
+    <div class="profile-card">
+      <small>Role / Department</small>
+      <h1>{{ selectedEmployee.role }}</h1>
+      <div>{{ selectedEmployee.department || 'N/A' }}</div>
+    </div>
+    <div class="profile-card gold-border">
+      <small>Goals Met</small>
+      <h1>{{ selectedEmployee.goalsMet || 0 }} / 100</h1>
+      <div>{{ selectedEmployee.goalsMet }}% Success Rate</div>
+    </div>
+  </div>
+  <div class="profile-lower">
+    <div class="profile-card slim">
+      <b>Basic Information</b>
+      <div>Start Date: N/A</div>
+      <div>Latest Review: N/A</div>
+      <div>Status: <span class="active-status">Active</span></div>
+    </div>
+    <div class="profile-card slim">
+      <b>Review History</b>
+      <div>No historical reviews available.</div>
+    </div>
+  </div>
+</div>

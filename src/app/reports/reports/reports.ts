@@ -16,7 +16,7 @@ export class Reports implements OnInit {
   currentPage = 1;
   pageSize = 10;
   loading = true;
-  Math = Math; // expose Math
+  Math = Math;
 
   constructor(private employeeService: EmployeeService, private router: Router, private cdr: ChangeDetectorRef) { }
 
@@ -52,6 +52,7 @@ export class Reports implements OnInit {
   }
 
   viewEmployee(empId: number) {
-    this.router.navigate(['/employees/view', empId]);
-  }
+  this.router.navigate(['employees', 'view', empId]);
+}
+
 }
