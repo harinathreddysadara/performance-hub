@@ -17,4 +17,9 @@ export const routes: Route[] = [
     loadChildren: () =>
       import('./settings/settings-module').then((m) => m.SettingsModule),
   },
+    {
+    path: 'employees/view/:id', // Added route for detail/profile page
+    loadComponent: () => 
+      import('./view-employee/view-employee').then(m => m.ViewEmployee),
+  }
 ];
